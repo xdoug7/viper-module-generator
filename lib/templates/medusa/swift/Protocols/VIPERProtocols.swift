@@ -19,15 +19,15 @@ protocol VIPERViewProtocol: class {
     */
 }
 
-// MARK: VIPERWireFrameProtocol
+// MARK: VIPERRouterFrameProtocol
 
-protocol VIPERWireFrameProtocol: class {
+protocol VIPERRouterProtocol: class {
 
     // MARK: - Presentation
     static func presentVIPERModule(fromView view: AnyObject)
 
     /**
-    * Add here your methods for communication PRESENTER -> WIREFRAME
+    * Add here your methods for communication PRESENTER -> ROUTER
     */
 }
 
@@ -39,7 +39,7 @@ protocol VIPERPresenterProtocol: class {
 
     var view: VIPERViewProtocol? { get set }
     var interactor: VIPERInteractorInputProtocol? { get set }
-    var wireFrame: VIPERWireFrameProtocol? { get set }
+    var router: VIPERRouterFrameProtocol? { get set }
 
     /**
     * Add here your methods for communication VIEW -> PRESENTER

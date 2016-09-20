@@ -11,7 +11,7 @@ final class VIPERPresenter: VIPERPresenterProtocol {
 
     weak var view: VIPERViewProtocol?
     var interactor: VIPERInteractorInputProtocol?
-    var wireFrame: VIPERWireFrameProtocol?
+    var router: VIPERRouterProtocol?
 
     // MARK: Initialization
     

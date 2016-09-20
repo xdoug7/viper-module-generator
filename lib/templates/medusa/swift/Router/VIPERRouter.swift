@@ -5,7 +5,7 @@
 
 import Foundation
 
-final class VIPERWireFrame: VIPERWireFrameProtocol {
+final class VIPERRouter: VIPERRouterProtocol {
 
     // MARK: - Presenting
 
@@ -17,12 +17,12 @@ final class VIPERWireFrame: VIPERWireFrameProtocol {
         let interactor: VIPERInteractorInputProtocol = VIPERInteractor()
         let APIDataManager: VIPERAPIDataManagerInputProtocol = VIPERAPIDataManager()
         let localDataManager: VIPERLocalDataManagerInputProtocol = VIPERLocalDataManager()
-        let wireFrame: VIPERWireFrameProtocol = VIPERWireFrame()
+        let router: VIPERRouterProtocol = VIPERRouter()
         
         // Connecting
         view.presenter = presenter
         presenter.view = view
-        presenter.wireFrame = wireFrame
+        presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
         interactor.APIDataManager = APIDataManager
