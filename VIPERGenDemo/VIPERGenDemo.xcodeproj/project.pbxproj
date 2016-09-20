@@ -772,8 +772,10 @@
 		B749E8B9F6CA030919C0FE23 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "AUTHOR";
+				ORGANIZATIONNAME = AUTHOR;
 			};
 			buildConfigurationList = B749E661FB627E9A7790FD49 /* Build configuration list for PBXProject "VIPERGenDemo" */;
 			compatibilityVersion = "Xcode 3.2";

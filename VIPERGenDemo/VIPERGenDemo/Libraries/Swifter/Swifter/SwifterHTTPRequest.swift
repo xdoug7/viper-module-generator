@@ -115,7 +115,7 @@ public class SwifterHTTPRequest: NSObject, NSURLConnectionDataDelegate {
 
             let charset = CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(self.dataEncoding))
 
-            var nonOAuthParameters = self.parameters.filter { key, _ in !key.hasPrefix("oauth_") }
+            let nonOAuthParameters = self.parameters.filter { key, _ in !key.hasPrefix("oauth_") }
 
             if self.uploadData.count > 0 {
                 let boundary = "----------SwIfTeRhTtPrEqUeStBoUnDaRy"
@@ -123,7 +123,7 @@ public class SwifterHTTPRequest: NSObject, NSURLConnectionDataDelegate {
                 let contentType = "multipart/form-data; boundary=\(boundary)"
                 self.request!.setValue(contentType, forHTTPHeaderField:"Content-Type")
 
-                var body = NSMutableData();
+                let body = NSMutableData();
 
                 for dataUpload: DataUpload in self.uploadData {
                     let multipartData = SwifterHTTPRequest.mulipartContentWithBounday(boundary, data: dataUpload.data, fileName: dataUpload.fileName, parameterName: dataUpload.parameterName, mimeType: dataUpload.mimeType)
@@ -131,7 +131,7 @@ public class SwifterHTTPRequest: NSObject, NSURLConnectionDataDelegate {
                     body.appendData(multipartData)
                 }
 
-                for (key, value : AnyObject) in nonOAuthParameters {
+                for (key, value) in nonOAuthParameters {
                     body.appendData("\r\n--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
                     body.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
                     body.appendData("\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
@@ -235,7 +235,7 @@ public class SwifterHTTPRequest: NSObject, NSURLConnectionDataDelegate {
 
         if self.response.statusCode >= 400 {
             let responseString = NSString(data: self.responseData, encoding: self.dataEncoding)
-            let localizedDescription = SwifterHTTPRequest.descriptionForHTTPStatus(self.response.statusCode, responseString: responseString!)
+            let localizedDescription = SwifterHTTPRequest.descriptionForHTTPStatus(self.response.statusCode, responseString: responseString! as String)
             let userInfo = [NSLocalizedDescriptionKey: localizedDescription, "Response-Headers": self.response.allHeaderFields]
             let error = NSError(domain: NSURLErrorDomain, code: self.response.statusCode, userInfo: userInfo)
             self.failureHandler?(error: error)
@@ -257,7 +257,7 @@ public class SwifterHTTPRequest: NSObject, NSURLConnectionDataDelegate {
             }
         }
 
-        return NSString(data: data, encoding: encoding)!
+        return NSString(data: data, encoding: encoding)! as String
     }
 
     class func descriptionForHTTPStatus(status: Int, responseString: String) -> String {

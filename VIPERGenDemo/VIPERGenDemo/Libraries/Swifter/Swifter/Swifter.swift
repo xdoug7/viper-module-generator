@@ -114,10 +114,11 @@ public class Swifter {
             }
 
             var error: NSError?
-            if let jsonResult = JSON.parseJSONData(data, error: &error) {
+            do {
+                let jsonResult = try JSON.parseJSONData(data)
                 downloadProgress?(json: jsonResult, response: response)
-            }
-            else {
+            } catch var error1 as NSError {
+                error = error1
                 let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
                 let jsonChunks = jsonString!.componentsSeparatedByString("\r\n") as [String]
 
@@ -132,6 +133,8 @@ public class Swifter {
                         downloadProgress?(json: jsonResult, response: response)
                     }
                 }
+            } catch {
+                fatalError()
             }
         }
 
@@ -139,11 +142,14 @@ public class Swifter {
             data, response in
 
             var error: NSError?
-            if let jsonResult = JSON.parseJSONData(data, error: &error) {
+            do {
+                let jsonResult = try JSON.parseJSONData(data)
                 success?(json: jsonResult, response: response)
-            }
-            else {
+            } catch var error1 as NSError {
+                error = error1
                 failure?(error: error!)
+            } catch {
+                fatalError()
             }
         }
 

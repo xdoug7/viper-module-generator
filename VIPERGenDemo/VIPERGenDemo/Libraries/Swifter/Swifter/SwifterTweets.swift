@@ -143,7 +143,7 @@ public extension Swifter {
     - https://dev.twitter.com/docs/api/multiple-media-extended-entities
     */
     public func postStatusUpdate(status: String, inReplyToStatusID: String?, lat: Double?, long: Double?, placeID: Double?, displayCoordinates: Bool?, trimUser: Bool?, success: ((status: Dictionary<String, JSONValue>?) -> Void)?, failure: FailureHandler?) {
-        var path: String = "statuses/update.json"
+        let path: String = "statuses/update.json"
 
         var parameters = Dictionary<String, AnyObject>()
         parameters["status"] = status
@@ -174,7 +174,7 @@ public extension Swifter {
     }
 
     public func postStatusUpdate(status: String, media: NSData, inReplyToStatusID: String?, lat: Double?, long: Double?, placeID: Double?, displayCoordinates: Bool?, trimUser: Bool?, success: ((status: Dictionary<String, JSONValue>?) -> Void)?, failure: FailureHandler?) {
-        var path: String = "statuses/update_with_media.json"
+        let path: String = "statuses/update_with_media.json"
 
         var parameters = Dictionary<String, AnyObject>()
         parameters["status"] = status
@@ -357,7 +357,7 @@ public extension Swifter {
         let path = "statuses/lookup.json"
 
         var parameters = Dictionary<String, AnyObject>()
-        parameters["id"] = join(",", tweetIDs)
+        parameters["id"] = tweetIDs.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!

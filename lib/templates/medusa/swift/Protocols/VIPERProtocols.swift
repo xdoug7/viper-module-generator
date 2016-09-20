@@ -5,65 +5,93 @@
 
 import Foundation
 
-protocol VIPERViewProtocol: class
-{
+// MARK: - Protocols
+
+// MARK: VIPERViewProtocol
+
+protocol VIPERViewProtocol: class {
+
+    // MARK: - Properties
     var presenter: VIPERPresenterProtocol? { get set }
+
     /**
     * Add here your methods for communication PRESENTER -> VIEW
     */
 }
 
-protocol VIPERWireFrameProtocol: class
-{
-    class func presentVIPERModule(fromView view: AnyObject)
+// MARK: VIPERWireFrameProtocol
+
+protocol VIPERWireFrameProtocol: class {
+
+    // MARK: - Presentation
+    static func presentVIPERModule(fromView view: AnyObject)
+
     /**
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
 }
 
-protocol VIPERPresenterProtocol: class
-{
+// MARK: VIPERPresenterProtocol
+
+protocol VIPERPresenterProtocol: class {
+
+    // MARK: - Properties
+
     var view: VIPERViewProtocol? { get set }
     var interactor: VIPERInteractorInputProtocol? { get set }
     var wireFrame: VIPERWireFrameProtocol? { get set }
+
     /**
     * Add here your methods for communication VIEW -> PRESENTER
     */
 }
 
-protocol VIPERInteractorOutputProtocol: class
-{
+// MARK: VIPERInteractorOutputProtocol
+
+protocol VIPERInteractorOutputProtocol: class {
+
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
 }
 
-protocol VIPERInteractorInputProtocol: class
-{
+// MARK: VIPERInteractorInputProtocol
+
+protocol VIPERInteractorInputProtocol: class {
+
+    // MARK: - Properties
+
     var presenter: VIPERInteractorOutputProtocol? { get set }
     var APIDataManager: VIPERAPIDataManagerInputProtocol? { get set }
     var localDatamanager: VIPERLocalDataManagerInputProtocol? { get set }
+
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
 }
 
-protocol VIPERDataManagerInputProtocol: class
-{
+// MARK: VIPERDataManagerInputProtocol
+
+protocol VIPERDataManagerInputProtocol: class {
+
     /**
     * Add here your methods for communication INTERACTOR -> DATAMANAGER
     */
 }
 
-protocol VIPERAPIDataManagerInputProtocol: class
-{
+// MARK: VIPERAPIDataManagerInputProtocol
+
+protocol VIPERAPIDataManagerInputProtocol: class {
+
     /**
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER
     */
 }
 
-protocol VIPERLocalDataManagerInputProtocol: class
-{
+// MARK: VIPERLocalDataManagerInputProtocol
+
+protocol VIPERLocalDataManagerInputProtocol: class {
+
     /**
     * Add here your methods for communication INTERACTOR -> LOCALDATAMANAGER
     */

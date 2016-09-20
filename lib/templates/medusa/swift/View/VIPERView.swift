@@ -6,7 +6,21 @@
 import Foundation
 import UIKit
 
-class VIPERView: UIViewController, VIPERViewProtocol
-{
+final class VIPERView: UIViewController {
+
+    // MARK: - Outlets
+
+    // MARK: - Properties
+
     var presenter: VIPERPresenterProtocol?
+
+    // MARK: - View's Lifecycle
+
+    // MARK: - Actions
+}
+
+// MARK: - VIPERViewProtocol
+
+extension VIPERView: VIPERViewProtocol {
+
 }

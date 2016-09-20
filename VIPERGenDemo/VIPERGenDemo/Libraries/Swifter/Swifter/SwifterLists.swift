@@ -797,7 +797,7 @@ public extension Swifter {
         parameters["list_id"] = listID
 
         let userIDStrings = userIDs.map { String($0) }
-        parameters["user_id"] = join(",", userIDStrings)
+        parameters["user_id"] = userIDStrings.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!
@@ -820,7 +820,7 @@ public extension Swifter {
 
         var parameters = Dictionary<String, AnyObject>()
         parameters["list_id"] = listID
-        parameters["screen_name"] = join(",", screenNames)
+        parameters["screen_name"] = screenNames.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!
@@ -846,7 +846,7 @@ public extension Swifter {
         parameters["owner_id"] = ownerID
 
         let userIDStrings = userIDs.map { String($0) }
-        parameters["user_id"] = join(",", userIDStrings)
+        parameters["user_id"] = userIDStrings.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!
@@ -870,7 +870,7 @@ public extension Swifter {
         var parameters = Dictionary<String, AnyObject>()
         parameters["slug"] = slug
         parameters["owner_id"] = ownerID
-        parameters["screen_name"] = join(",", screenNames)
+        parameters["screen_name"] = screenNames.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!
@@ -896,7 +896,7 @@ public extension Swifter {
         parameters["owner_screen_name"] = ownerScreenName
 
         let userIDStrings = userIDs.map { String($0) }
-        parameters["user_id"] = join(",", userIDStrings)
+        parameters["user_id"] = userIDStrings.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!
@@ -920,7 +920,7 @@ public extension Swifter {
         var parameters = Dictionary<String, AnyObject>()
         parameters["slug"] = slug
         parameters["owner_screen_name"] = ownerScreenName
-        parameters["screen_name"] = join(",", screenNames)
+        parameters["screen_name"] = screenNames.joinWithSeparator(",")
 
         if includeEntities != nil {
             parameters["include_entities"] = includeEntities!
@@ -1588,7 +1588,7 @@ public extension Swifter {
         parameters["list_id"] = listID
 
         let userIDStrings = userIDs.map { String($0) }
-        parameters["user_id"] = join(",", userIDStrings)
+        parameters["user_id"] = userIDStrings.joinWithSeparator(",")
 
         self.postJSONWithPath(path, baseURL: self.apiURL, parameters: parameters, uploadProgress: nil, downloadProgress: nil, success: {
             json, response in
@@ -1604,7 +1604,7 @@ public extension Swifter {
 
         var parameters = Dictionary<String, AnyObject>()
         parameters["list_id"] = listID
-        parameters["screen_name"] = join(",", screenNames)
+        parameters["screen_name"] = screenNames.joinWithSeparator(",")
 
         self.postJSONWithPath(path, baseURL: self.apiURL, parameters: parameters, uploadProgress: nil, downloadProgress: nil, success: {
             json, response in
@@ -1622,7 +1622,7 @@ public extension Swifter {
         parameters["slug"] = slug
 
         let userIDStrings = userIDs.map { String($0) }
-        parameters["user_id"] = join(",", userIDStrings)
+        parameters["user_id"] = userIDStrings.joinWithSeparator(",")
 
         parameters["owner_screen_name"] = ownerScreenName
 
@@ -1640,7 +1640,7 @@ public extension Swifter {
 
         var parameters = Dictionary<String, AnyObject>()
         parameters["slug"] = slug
-        parameters["screen_name"] = join(",", screenNames)
+        parameters["screen_name"] = screenNames.joinWithSeparator(",")
         parameters["owner_screen_name"] = ownerScreenName
         
         self.postJSONWithPath(path, baseURL: self.apiURL, parameters: parameters, uploadProgress: nil, downloadProgress: nil, success: {
@@ -1659,7 +1659,7 @@ public extension Swifter {
         parameters["slug"] = slug
 
         let userIDStrings = userIDs.map { String($0) }
-        parameters["user_id"] = join(",", userIDStrings)
+        parameters["user_id"] = userIDStrings.joinWithSeparator(",")
 
         parameters["owner_id"] = ownerID
         
@@ -1677,7 +1677,7 @@ public extension Swifter {
         
         var parameters = Dictionary<String, AnyObject>()
         parameters["slug"] = slug
-        parameters["screen_name"] = join(",", screenNames)
+        parameters["screen_name"] = screenNames.joinWithSeparator(",")
         parameters["owner_id"] = ownerID
         
         self.postJSONWithPath(path, baseURL: self.apiURL, parameters: parameters, uploadProgress: nil, downloadProgress: nil, success: {

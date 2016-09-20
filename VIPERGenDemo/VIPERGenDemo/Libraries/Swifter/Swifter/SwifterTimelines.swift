@@ -87,7 +87,7 @@ public extension Swifter {
     This method can only return up to 3,200 of a user's most recent Tweets. Native retweets of other statuses by the user is included in this total, regardless of whether include_rts is set to false when requesting this resource.
     */
     public func getStatusesUserTimelineWithUserID(userID: String, count: Int?, sinceID: String?, maxID: String?, trimUser: Bool?, contributorDetails: Bool?, includeEntities: Bool?, success: ((statuses: [JSONValue]?) -> Void)?, failure: FailureHandler?) {
-        var parameters: Dictionary<String, AnyObject> = ["user_id": userID]
+        let parameters: Dictionary<String, AnyObject> = ["user_id": userID]
 
         self.getTimelineAtPath("statuses/user_timeline.json", parameters: parameters, count: count, sinceID: sinceID, maxID: maxID, trimUser: trimUser, contributorDetails: contributorDetails, includeEntities: includeEntities, success: success, failure: failure)
     }
