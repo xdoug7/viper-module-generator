@@ -12,6 +12,7 @@ import Foundation
 protocol VIPERViewProtocol: class {
 
     // MARK: - Properties
+
     var presenter: VIPERPresenterProtocol? { get set }
 
     /**
@@ -19,11 +20,12 @@ protocol VIPERViewProtocol: class {
     */
 }
 
-// MARK: VIPERRouterFrameProtocol
+// MARK: VIPERRouterProtocol
 
 protocol VIPERRouterProtocol: class {
 
     // MARK: - Presentation
+    
     static func presentVIPERModule(fromView view: AnyObject)
 
     /**
@@ -39,7 +41,7 @@ protocol VIPERPresenterProtocol: class {
 
     var view: VIPERViewProtocol? { get set }
     var interactor: VIPERInteractorInputProtocol? { get set }
-    var router: VIPERRouterFrameProtocol? { get set }
+    var router: VIPERRouterProtocol? { get set }
 
     /**
     * Add here your methods for communication VIEW -> PRESENTER
