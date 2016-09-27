@@ -57,7 +57,6 @@ class TwitterListView: TWViewController, TwitterListViewProtocol, UITableViewDat
         self.presenter?.viewDidLoad()
     }
     
-    
     // MARK: Observers
     
     func setupObservers()
