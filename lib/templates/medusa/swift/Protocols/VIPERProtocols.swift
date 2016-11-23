@@ -47,14 +47,6 @@ protocol VIPERInteractorInputProtocol: class {
     var localDatamanager: VIPERLocalDataManagerInputProtocol? { get set }
 }
 
-// MARK: VIPERInteractorOutputProtocol
-// INTERACTOR -> PRESENTER
-protocol VIPERInteractorOutputProtocol: class { }
-
-// MARK: VIPERDataManagerInputProtocol
-// INTERACTOR -> DATAMANAGER
-protocol VIPERDataManagerInputProtocol: class { }
-
 // MARK: VIPERAPIDataManagerInputProtocol
 // INTERACTOR -> APIDATAMANAGER
 protocol VIPERAPIDataManagerInputProtocol: class { }
@@ -62,3 +54,7 @@ protocol VIPERAPIDataManagerInputProtocol: class { }
 // MARK: VIPERLocalDataManagerInputProtocol
 // INTERACTOR -> LOCALDATAMANAGER
 protocol VIPERLocalDataManagerInputProtocol: class { }
+
+// MARK: VIPERInteractorOutputProtocol
+// INTERACTOR -> PRESENTER
+protocol VIPERInteractorOutputProtocol: class { }
