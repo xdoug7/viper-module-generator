@@ -32,7 +32,7 @@ protocol VIPERViewProtocol: class {
 protocol VIPERRouterProtocol: class {
 
     // MARK: - Presentation
-    
+
     static func presentVIPERModule(fromView view: AnyObject)
 }
 

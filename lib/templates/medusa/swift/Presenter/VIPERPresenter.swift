@@ -22,4 +22,5 @@ final class VIPERPresenter: VIPERPresenterProtocol {
 
 extension VIPERPresenter: VIPERInteractorOutputProtocol {
 
+
 }

@@ -18,7 +18,7 @@ final class VIPERRouter: VIPERRouterProtocol {
         let APIDataManager: VIPERAPIDataManagerInputProtocol = VIPERAPIDataManager()
         let localDataManager: VIPERLocalDataManagerInputProtocol = VIPERLocalDataManager()
         let router: VIPERRouterProtocol = VIPERRouter()
-        
+
         // Connecting
         view.presenter = presenter
         presenter.view = view

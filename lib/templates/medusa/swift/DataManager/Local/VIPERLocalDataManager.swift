@@ -8,6 +8,7 @@ import Foundation
 final class VIPERLocalDataManager: VIPERLocalDataManagerInputProtocol {
 
     // MARK: - Initialization
-    
+
     init() {}
+
 }

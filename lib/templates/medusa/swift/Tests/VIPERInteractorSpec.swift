@@ -18,7 +18,7 @@ final class VIPERInteractorSpec: QuickSpec {
 
     // MARK: - Tests
 
-    override func spec(){
+    override func spec() {
         describe("VIPERInteractor") {
 
             // MARK: - Properties

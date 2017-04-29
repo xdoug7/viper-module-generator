@@ -14,6 +14,7 @@ final class VIPERInteractor: VIPERInteractorInputProtocol {
     var localDatamanager: VIPERLocalDataManagerInputProtocol?
 
     // MARK: - Initialization
-    
+
     init() {}
+
 }
