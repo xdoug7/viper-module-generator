@@ -23,5 +23,4 @@ final class VIPERView: UIViewController {
 
 extension VIPERView: VIPERViewProtocol {
 
-
 }

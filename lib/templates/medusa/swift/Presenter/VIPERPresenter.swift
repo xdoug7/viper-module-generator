@@ -14,13 +14,12 @@ final class VIPERPresenter: VIPERPresenterProtocol {
     var router: VIPERRouterProtocol?
 
     // MARK: Initialization
-    
+
     init() {}
 }
 
 // MARK: - VIPERInteractorOutputProtocol
 
 extension VIPERPresenter: VIPERInteractorOutputProtocol {
-
 
 }
