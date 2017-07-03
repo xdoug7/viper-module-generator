@@ -33,7 +33,7 @@ protocol VIPERRouterProtocol: class {
 
     // MARK: - Presentation
 
-    static func presentVIPERModule(fromView view: AnyObject)
+    static func presentVIPERModule(from fromView: AnyObject)
 }
 
 // MARK: VIPERInteractorInputProtocol
@@ -47,6 +47,10 @@ protocol VIPERInteractorInputProtocol: class {
     var localDatamanager: VIPERLocalDataManagerInputProtocol? { get set }
 }
 
+// MARK: VIPERInteractorOutputProtocol
+// INTERACTOR -> PRESENTER
+protocol VIPERInteractorOutputProtocol: class { }
+
 // MARK: VIPERAPIDataManagerInputProtocol
 // INTERACTOR -> APIDATAMANAGER
 protocol VIPERAPIDataManagerInputProtocol: class { }
@@ -54,7 +58,3 @@ protocol VIPERAPIDataManagerInputProtocol: class { }
 // MARK: VIPERLocalDataManagerInputProtocol
 // INTERACTOR -> LOCALDATAMANAGER
 protocol VIPERLocalDataManagerInputProtocol: class { }
-
-// MARK: VIPERInteractorOutputProtocol
-// INTERACTOR -> PRESENTER
-protocol VIPERInteractorOutputProtocol: class { }

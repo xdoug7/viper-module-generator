@@ -9,7 +9,7 @@ final class VIPERRouter: VIPERRouterProtocol {
 
     // MARK: - Presenting
 
-    static func presentVIPERModule(fromView view: AnyObject) {
+    static func presentVIPERModule(from fromView: AnyObject) {
 
         // Generating module components
         let view: VIPERViewProtocol = VIPERView()
