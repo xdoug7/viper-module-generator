@@ -29,7 +29,7 @@ final class VIPERInteractorSpec: QuickSpec {
             beforeEach {
                 sut = VIPERInteractor()
                 sut.APIDataManager = APIDataManagerMock()
-                sut.localDatamanager = LocalDataManagerWithLocationMock()
+                sut.localDatamanager = LocalDataManagerMock()
                 presenterMock = PresenterMock()
                 sut.presenter = presenterMock
             }
